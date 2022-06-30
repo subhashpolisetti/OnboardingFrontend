@@ -1,0 +1,34 @@
+
+
+<h1>Employee Login</h1>
+<mat-grid-list cols="3" rowHeight="450px">
+  <mat-grid-tile> </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="example-container">
+      
+      <mat-form-field appearance="outline" class="width-100 textbox">
+        <mat-label>Employee Id</mat-label>
+        <input matInput required [(ngModel)]="loginobj.id" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="width-100 textbox">
+        <mat-label>password</mat-label>
+        <input matInput required [(ngModel)]="loginobj.password" type="password" />
+      </mat-form-field>
+      <div>  <mat-error>{{invalidCheck}}</mat-error></div>
+      <div class="mybutton textbox" >
+          <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+      </div>
+    
+      <mat-grid-list cols="1" rowHeight="50px">
+        <mat-grid-tile> </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile> </mat-grid-tile>
+</mat-grid-list>
+
+
+<!-- Copyright 2022 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->

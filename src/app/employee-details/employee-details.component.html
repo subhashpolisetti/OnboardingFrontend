@@ -1,0 +1,128 @@
+<mat-toolbar >
+    
+  <mat-toolbar-row>
+
+    
+      <button mat-icon-button  >
+
+        <mat-icon (click)="sidenav.toggle();" >menu</mat-icon>
+
+      </button>
+    
+   
+      <h1 >Employee Details</h1>
+    
+      </mat-toolbar-row>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+
+    <mat-sidenav #sidenav opened="false" mode="over">
+
+      <mat-nav-list>
+       <a routerLink="attendance" class="active" mat-list-item>Employee Details</a>
+
+      <a mat-list-item (click)="toNavigate()"  >Reports</a>
+
+      </mat-nav-list>
+
+    </mat-sidenav>
+  
+
+    <mat-sidenav-content>
+      <div></div>
+      <div style="height:87vh;">
+        <mat-grid-list cols="2" rowHeight="100px" >
+          <mat-grid-tile  ></mat-grid-tile>
+      <mat-grid-tile  >
+          <div class="example-container">
+              <div>
+               <button mat-raised-button class="buttonin"(click)='loginTime()'>IN</button>
+                  <button mat-raised-button color="warn" (click)='pauseTimer()'>Out</button>
+                  <button mat-raised-button class="log"(click)='logout()'>LogOut</button>
+              </div>
+              <div>
+                  <p>{{transform(time)}}</p>
+              </div>
+      
+          </div></mat-grid-tile>
+      </mat-grid-list>
+      <form [formGroup]="employeeForm" #myForm="ngForm">
+      <mat-grid-list cols="4" rowHeight="500px" >
+          <mat-grid-tile >
+          </mat-grid-tile >
+      
+          <mat-grid-tile  >
+              <div class="example-container">
+                  <mat-form-field appearance="outline" class="width-100"  >
+                      <mat-label>Employee Id</mat-label>
+                      <input matInput type="number" placeholder="Ex:1234" formControlName="employeeId" [readonly]="idedit" >
+                  </mat-form-field>
+                <mat-form-field appearance="outline" class="width-100"  >
+                  <mat-label>Employee Name</mat-label>
+                  <input matInput formControlName="employeeName"required [readonly]="editoption" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="width-100">
+                  <mat-label>Experience</mat-label>
+                  <input matInput type="number" placeholder="Ex:12" formControlName="experience" [readonly]="editoption" required >
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="width-100">
+                  <mat-label>Qualification</mat-label>
+                  <input matInput formControlName="qualification" required [readonly]="editoption"  >
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="width-100">
+                  <mat-label>Salary</mat-label>
+                  <input matInput type="number" placeholder="Ex:10000" formControlName="salary" required [readonly]="editoption" >
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="width-100">
+                  <mat-label>Designation</mat-label>
+                  <mat-select [disabled]="editoption" formControlName="designation">
+                    <mat-option *ngFor="let designations  of designation" [value]="designations.designation_name"  value={{des}} >
+                      {{designations.designation_name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                
+      
+              </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="example-container">
+            <mat-label>Highest Qualification </mat-label>
+            <input type="file"  formControlName="qualificationDoc" (change)="onChange($event)"><br>
+            <mat-label>SSC certificate</mat-label>
+            <input type="file" formControlName="sscCertificate" (change)="onChange($event)"><br>
+            <mat-label>Releaving Letter</mat-label>
+            <input type="file" formControlName="releavingLetter" (change)="onChange($event)"><br>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile></mat-grid-tile>
+      </mat-grid-list>
+      </form><mat-grid-list cols="1" rowHeight="100px">
+          <mat-grid-tile >
+              <button mat-raised-button color="primary" (click)="onSubmit()"  [disabled]="editoption">Submit</button>
+              
+                <button mat-raised-button color="primary" (click)="onEdit()" class="edit">Edit</button>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+
+    </mat-sidenav-content>
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+         
+
+
+

@@ -1,0 +1,46 @@
+
+mat-grid-tile {
+    background:white;
+    
+  }
+ h1{
+    color:black;
+    text-align: center;
+    flex: 1 1 auto;
+    font-weight: bold;
+    font-size: 200%;
+    background-color: powderblue;
+    font-family: "Times New Roman", Times, serif;
+    background-size: 300px 100px;
+  }
+
+  .width-100{width: 80%;}
+  .ml-1{margin-left: 1%;}
+  .ml-2{margin-left: 1%;}
+  .buttonin{
+    background-color:green;
+    margin-right:10px;
+   
+
+    
+  }
+  .log{
+    background-color:powderblue;
+    margin-left:10px;
+  }
+  .icon {
+    font-size: 56px;
+    transform: scale(1);
+}
+.active {
+
+  color:powderblue;
+   font-weight:400;
+   
+}
+.mat-toolbar-multiple-rows {
+  background-color: powderblue;
+}
+.edit{
+  margin-left:20px;
+}

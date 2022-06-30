@@ -1,0 +1,30 @@
+
+mat-grid-tile {
+    background:white;
+    
+  }
+ h1{
+    color:black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    background-color: powderblue;
+    font-family: "Times New Roman", Times, serif;
+    background-size: 300px 100px;
+  }
+
+  .width-100{width: 80%;}
+  .ml-1{margin-left: 1%;}
+  .ml-2{margin-left: 1%;}
+  .home{
+    background-color:powderblue;
+    margin-bottom:20px;
+    padding-left:30px;
+    padding-right:30px;   
+  }
+  .out{
+    background-color:royalblue;
+    padding-left:30px;
+    padding-right:30px;    
+  }
+  
